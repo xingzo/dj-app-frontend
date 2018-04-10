@@ -1,5 +1,6 @@
 import React, { Component } from "react";
-import { Button, FormGroup, FormControl, ControlLabel } from "react-bootstrap";
+import { Button, FormGroup, FormControl, ControlLabel, Modal, ModalHeader, ModalBody, ModalFoote } from "react-bootstrap";
+import { Auth } from "aws-amplify";
 import "./Login.css";
 
 export default class Login extends Component {
@@ -8,8 +9,11 @@ export default class Login extends Component {
 
     this.state = {
       email: "",
-      password: ""
+      password: "",
+      modal: false
     };
+
+     this.toggle = this.toggle.bind(this);
   }
 
   validateForm() {
@@ -22,9 +26,22 @@ export default class Login extends Component {
     });
   }
 
-  handleSubmit = event => {
+  handleSubmit = async event => {
     event.preventDefault();
+
+    try {
+      await Auth.signIn(this.state.email, this.state.password);
+      this.props.userHasAuthenticated(true);
+    } catch (e) {
+      alert(e.message);
+}
   }
+
+  toggle() {
+  this.setState({
+    modal: !this.state.modal
+  });
+}
 
   render() {
     return (
