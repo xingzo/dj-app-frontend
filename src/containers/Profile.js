@@ -106,8 +106,8 @@ export default class Profile extends Component {
          {renderPage}
 
         <div className="lander">
-          <h1>Rest of profile</h1>
-          <p>A simple dj app</p>
+          <h1>a footer</h1>
+          <p> &copy; 2018</p>
         </div>
       </div>
     );

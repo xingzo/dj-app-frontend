@@ -41,6 +41,8 @@ class App extends Component {
     await Auth.signOut();
 
     this.userHasAuthenticated(false);
+    //now lets redirect our user
+    this.props.history.push("/");
   }
 
   render() {
@@ -61,6 +63,9 @@ class App extends Component {
           </Navbar.Header>
           <Navbar.Collapse>
             <Nav pullRight>
+            <LinkContainer to="/profile">
+              <NavItem>Dj Shinski</NavItem>
+            </LinkContainer>
             {this.state.isAuthenticated
               ? <NavItem onClick={this.handleLogout}>Logout</NavItem>
               : <Fragment>
@@ -81,4 +86,4 @@ class App extends Component {
   }
 }
 
-export default App;
+export default withRouter(App);
