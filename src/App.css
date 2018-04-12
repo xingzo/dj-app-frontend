@@ -45,3 +45,31 @@
   height: 3px;
 
 } */
+
+.content-wrapper {
+  max-width: 950px;
+  margin: 0 auto;
+  padding: 0 1rem;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body{
+  /* background-color: #212121; */
+  background-color: white;
+
+  font-family: 'Lato', 'Helvetica Neue', Helvetica, Arial, sans-serif;
+  -webkit-font-smoothing: antialiased;
+  margin: 0 auto;
+  position: relative;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-family: "Lato", sans-serif;
+  text-transform: uppercase;
+  font-weight: 700;
+  color: #b1b1b1;
+  text-align: center;
+}
