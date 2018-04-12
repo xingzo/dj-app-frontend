@@ -41,6 +41,8 @@ class App extends Component {
     await Auth.signOut();
 
     this.userHasAuthenticated(false);
+    //now lets redirect our user
+    this.props.history.push("/");
   }
 
   render() {
@@ -84,4 +86,4 @@ class App extends Component {
   }
 }
 
-export default App;
+export default withRouter(App);
