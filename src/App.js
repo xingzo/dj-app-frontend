@@ -61,6 +61,9 @@ class App extends Component {
           </Navbar.Header>
           <Navbar.Collapse>
             <Nav pullRight>
+            <LinkContainer to="/profile">
+              <NavItem>Dj Shinski</NavItem>
+            </LinkContainer>
             {this.state.isAuthenticated
               ? <NavItem onClick={this.handleLogout}>Logout</NavItem>
               : <Fragment>
