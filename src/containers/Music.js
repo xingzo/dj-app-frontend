@@ -1,11 +1,7 @@
 import React, { Component } from 'react';
-import './About.css';
-import Header from "./Header";
+import './Music.css';
 
-import AboutNav from "./AboutNav";
-
-
-class About extends Component {
+class Music extends Component {
   // constructor(props){
     // super();
     // this.state = {};
@@ -22,13 +18,9 @@ class About extends Component {
 
   render() {
     return (
-      <div>
-      <div>
-      <h2> about me section </h2>
-      </div>
-      </div>
+      <div><h2> music me section </h2></div>
     );
   }
 }
 
-export default About;
+export default Music;
