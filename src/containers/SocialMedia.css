@@ -1,0 +1,23 @@
+.social-media-container{
+  text-align: center;
+
+  z-index: 2;
+  position: absolute;
+  top: 210px;
+  left: 680px;
+}
+
+.social-media-container h2{
+text-transform: uppercase;;
+letter-spacing: .25em;
+}
+
+.social-media-container .row a{
+  padding: 1em;
+  margin: 0 auto;
+  color: black;
+}
+
+.fa{
+  font-size: 2em;
+}

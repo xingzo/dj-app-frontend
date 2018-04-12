@@ -1,0 +1,17 @@
+.about-nav{
+  /* margin: 0 auto; */
+  text-align: center;
+}
+
+.no-border-btn{
+  font-weight: bold;
+  padding: 1em 2em;
+  margin: 0 auto;
+  text-align: center;
+  color: #b1b1b1;
+  background-color: white;
+  border: none;
+  text-transform: uppercase;
+
+
+}
