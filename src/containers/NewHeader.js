@@ -2,7 +2,9 @@ import React, { Component } from "react";
 import { FormGroup, FormControl, ControlLabel } from "react-bootstrap";
 import LoaderButton from "../components/LoaderButton";
 import config from "../config";
+import { API } from "aws-amplify";
 import "./NewHeader.css";
+import { s3Upload } from "../libs/awsLib";
 
 export default class NewHeader extends Component {
   constructor(props) {
@@ -30,6 +32,10 @@ export default class NewHeader extends Component {
     this.file = event.target.files[0];
   }
 
+  //***********************************************************
+  //HANNDLE SUBMIT
+  //***********************************************************
+
   handleSubmit = async event => {
     event.preventDefault();
 
@@ -39,7 +45,35 @@ export default class NewHeader extends Component {
     }
 
     this.setState({ isLoading: true });
+
+    try {
+      const attachment = this.file
+        ? await s3Upload(this.file)
+        : null;
+
+      await this.createNote({
+        attachment,
+        content: this.state.content
+      });
+      this.props.history.push("/");
+    } catch (e) {
+      alert(e);
+      this.setState({ isLoading: false });
+    }
   }
+    //***********************************************************
+    //CREATE HEADER
+    //***********************************************************
+
+  createNote(note) {
+    return API.post("todos", "/todos", {
+      body: note
+    });
+  }
+
+  //***********************************************************
+  //RENDER
+  //***********************************************************
 
   render() {
     return (
