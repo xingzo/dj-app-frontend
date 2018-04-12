@@ -1,5 +1,6 @@
 import React, { Component } from "react";
-import { Button, FormGroup, FormControl, ControlLabel, Modal, ModalHeader, ModalBody, ModalFoote } from "react-bootstrap";
+import { Button, FormGroup, FormControl, ControlLabel, Modal,
+        ModalHeader, ModalBody, ModalFooter} from "react-bootstrap";
 import { Auth } from "aws-amplify";
 import "./Login.css";
 
@@ -32,9 +33,10 @@ export default class Login extends Component {
     try {
       await Auth.signIn(this.state.email, this.state.password);
       this.props.userHasAuthenticated(true);
+      this.props.history.push("/");
     } catch (e) {
       alert(e.message);
-}
+    }
   }
 
   toggle() {
