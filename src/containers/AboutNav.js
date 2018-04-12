@@ -23,6 +23,9 @@ class AboutNav extends Component {
     return (
        <div className = "about-nav row">
           <LinkContainer className = "col" to="/signup">
+            <button className="no-border-btn" >Music</button>
+          </LinkContainer>
+          <LinkContainer className = "col" to="/signup">
             <button className="no-border-btn" >About</button>
           </LinkContainer>
           <LinkContainer className = "col" to="/login">

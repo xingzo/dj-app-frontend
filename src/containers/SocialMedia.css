@@ -13,6 +13,7 @@ letter-spacing: .25em;
 }
 
 .social-media-container .row a{
+  padding: 1em;
   margin: 0 auto;
   color: black;
 }
