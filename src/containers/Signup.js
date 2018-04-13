@@ -8,6 +8,8 @@ import {
 import LoaderButton from "../components/LoaderButton";
 import "./Signup.css";
 import { Auth } from "aws-amplify";
+import { API } from "aws-amplify";
+
 
 export default class Signup extends Component {
   constructor(props) {
@@ -80,11 +82,43 @@ export default class Signup extends Component {
       await Auth.signIn(this.state.email, this.state.password);
 
       this.props.userHasAuthenticated(true);
+
+      //I NEED TO CREATE ALL ATTRIBUTES FOR THE USER HERE
+
+          try {
+            await this.createNote({
+              content: "blank for now"
+            });
+            this.props.history.push("/");
+          } catch (e) {
+            alert(e);
+            this.setState({ isLoading: false });
+          }
       this.props.history.push("/");
     } catch (e) {
       alert(e.message);
       this.setState({ isLoading: false });
     }
+  }
+
+  // async createUser() {
+  //
+  //   try {
+  //     await this.createNote({
+  //       content: "blank for now"
+  //     });
+  //     this.props.history.push("/");
+  //   } catch (e) {
+  //     alert(e);
+  //     this.setState({ isLoading: false });
+  //   }
+  // }
+
+  createNote(note) {
+    alert("we in the actual createNOte Func");
+    return API.post("todos", "/todos", {
+      body: note
+    });
   }
 
 
