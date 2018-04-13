@@ -24,7 +24,7 @@ class Music extends Component {
 
     <Row>
       <Col sm="6">
-        <img className = "album-cover" src="on-my-own.jpg" alt="" />
+        <img className = "album-cover" src={require('../on-my-own.jpg')} alt="" />
         <div className="music-player">
           <iframe width="100%" height="90" scrolling="no" frameborder="no" allow="autoplay" src="https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/tracks/372287354&color=%23ff5500&auto_play=false&hide_related=false&show_comments=true&show_user=true&show_reposts=false&show_teaser=true"></iframe>
 
@@ -34,7 +34,7 @@ class Music extends Component {
       </Col>
 
       <Col sm="6">
-        <img className = "album-cover" src="on-my-own.jpg" alt="" />
+        <img className = "album-cover" src={require('../on-my-own.jpg')} alt="" />
         <div className="music-player">
           <iframe width="100%" height="90" scrolling="no" frameborder="no" allow="autoplay" src="https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/tracks/421343235&color=%23ff5500&auto_play=false&hide_related=false&show_comments=true&show_user=true&show_reposts=false&show_teaser=true"></iframe>
         </div>
@@ -44,7 +44,7 @@ class Music extends Component {
     </Row>
     <Row>
       <Col sm="6">
-        <img className = "album-cover" src="on-my-own.jpg" alt="" />
+        <img className = "album-cover" src={require('../on-my-own.jpg')}alt="" />
         <div className="music-player">
           <iframe width="100%" height="90" scrolling="no" frameborder="no" allow="autoplay" src="https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/tracks/372287354&color=%23ff5500&auto_play=false&hide_related=false&show_comments=true&show_user=true&show_reposts=false&show_teaser=true"></iframe>
 
@@ -54,7 +54,7 @@ class Music extends Component {
       </Col>
 
       <Col sm="6">
-        <img className = "album-cover" src="on-my-own.jpg" alt="" />
+        <img className = "album-cover" src={require('../on-my-own.jpg')} alt="" />
         <div className="music-player">
           <iframe width="100%" height="90" scrolling="no" frameborder="no" allow="autoplay" src="https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/tracks/421343235&color=%23ff5500&auto_play=false&hide_related=false&show_comments=true&show_user=true&show_reposts=false&show_teaser=true"></iframe>
         </div>
